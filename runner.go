@@ -5,6 +5,7 @@ import "fmt"
 func main() {
 	result := d1p2()
 	fmt.Println("Result: ", result)
+	fmt.Println("Francesk's solution: ", CampD1P1())
 }
 
 func d1p1() int64 {

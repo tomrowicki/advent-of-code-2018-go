@@ -20,9 +20,7 @@ func InputLinesToSlice(filename string) []string {
 	}(file)
 
 	scanner := bufio.NewScanner(file)
-
 	lines := make([]string, 0)
-
 	for scanner.Scan() {
 		line := scanner.Text()
 		lines = append(lines, line)

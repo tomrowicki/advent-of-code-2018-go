@@ -23,12 +23,13 @@ func day1SumFrequencies(freqs []string) int64 {
 	return current
 }
 
+// should be 390
 func day1Rollfrequenciesbeforevaluerepeats(freqs []string) int64 {
 	var current = start
 	mapOfHits := make(map[int64]bool)
 	index := 0
 	for {
-		if mapOfHits[current] == true {
+		if mapOfHits[current] {
 			return current
 		} else {
 			mapOfHits[current] = true
@@ -49,7 +50,6 @@ func day1Rollfrequenciesbeforevaluerepeats(freqs []string) int64 {
 }
 
 func obtainFreqValue(freq string) int64 {
-	//value, err := strconv.Atoi(freq[1:])
 	value, err := strconv.ParseInt(freq[1:], 10, 64)
 	if err != nil {
 		log.Fatalln("Could not convert string to int!")
