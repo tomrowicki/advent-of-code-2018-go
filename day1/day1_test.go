@@ -1,6 +1,9 @@
-package main
+package day1
 
-import "testing"
+import (
+	"AdventOfCode2018/common"
+	"testing"
+)
 
 type testFixture struct {
 	inputLines     []string
@@ -16,7 +19,7 @@ func TestDay1Part1(t *testing.T) {
 	}
 
 	for _, c := range cases {
-		returnedVal := day1SumFrequencies(c.inputLines)
+		returnedVal := SumFrequencies(c.inputLines)
 		if c.expectedOutput != returnedVal {
 			t.Errorf("Should be: %d, got: %d!", c.expectedOutput, returnedVal)
 		}
@@ -36,7 +39,7 @@ func TestDay1Part2(t *testing.T) {
 	}
 
 	for _, c := range cases {
-		returnedVal := day1Rollfrequenciesbeforevaluerepeats(c.inputLines)
+		returnedVal := Rollfrequenciesbeforevaluerepeats(c.inputLines)
 		if c.expectedOutput != returnedVal {
 			t.Errorf("Should be: %d, got: %d!", c.expectedOutput, returnedVal)
 		}
@@ -45,7 +48,7 @@ func TestDay1Part2(t *testing.T) {
 
 func BenchmarkD1P2(b *testing.B) {
 	for i := 0; i < b.N; i++ {
-		result := d1p2()
+		result := Rollfrequenciesbeforevaluerepeats(common.InputLinesToSlice("day1_input.txt"))
 		if result != 390 {
 			b.Errorf("Result %d does not equal %d", result, 390)
 		}

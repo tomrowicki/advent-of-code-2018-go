@@ -1,4 +1,4 @@
-package main
+package day1
 
 import (
 	"log"
@@ -9,7 +9,8 @@ import (
 var start int64 = 0
 
 // should be 477
-func day1SumFrequencies(freqs []string) int64 {
+
+func SumFrequencies(freqs []string) int64 {
 	var current = start
 	for _, freq := range freqs {
 		sign := string([]rune(freq)[0])
@@ -24,7 +25,8 @@ func day1SumFrequencies(freqs []string) int64 {
 }
 
 // should be 390
-func day1Rollfrequenciesbeforevaluerepeats(freqs []string) int64 {
+
+func Rollfrequenciesbeforevaluerepeats(freqs []string) int64 {
 	var current = start
 	mapOfHits := make(map[int64]bool)
 	index := 0
